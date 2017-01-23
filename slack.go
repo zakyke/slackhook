@@ -34,6 +34,7 @@ type Message struct {
 	ts                  int64
 	fields              []Field
 	service             *Slack
+	footer, footerUrl   string
 }
 
 func (m *Message) Color(color string) *Message {
@@ -42,6 +43,11 @@ func (m *Message) Color(color string) *Message {
 	} else {
 		m.color = `warning`
 	}
+	return m
+}
+func (m *Message) Footer(text, url string) *Message {
+	m.footer = text
+	m.footerUrl = url
 	return m
 }
 func (m *Message) Subject(subject string) *Message {
@@ -114,6 +120,8 @@ func (m *Message) Send() error {
 				AuthorName: m.service.authorName,
 				Title:      m.subject,
 				Fields:     m.fields,
+				Footer:     m.footer,
+				FooterIcon: m.footerUrl,
 			},
 		},
 	}
