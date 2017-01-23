@@ -17,6 +17,8 @@ Usage
             `:ghost:`
             )
 
+        //client.NewMessage().Send() will send un empty message.
+
 	fld := []Field{
                 Field{Title: `t1`, Value: `v1`, Short: true}, 
                 Field{Title: `t2`, Value: `v2`, Short: true}, 
