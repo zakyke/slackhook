@@ -14,7 +14,7 @@ Usage
             `http://monitor/page/`, 
             `test goslack`, 
             `app name`, 
-            `:ghost:`
+            `:ghost:`,
             )
 
         //client.NewMessage().Send() will send un empty message.
@@ -22,7 +22,7 @@ Usage
 	fld := []Field{
                 Field{Title: `t1`, Value: `v1`, Short: true}, 
                 Field{Title: `t2`, Value: `v2`, Short: true}, 
-                Field{Title: `t3`, Value: `v3`, Short: true}
+                Field{Title: `t3`, Value: `v3`, Short: true},
             }
 
 	msg := client.NewMessage().Color(`#439FE0`).Subject(`test subject`).Text(`not important`).Fields(fld)
